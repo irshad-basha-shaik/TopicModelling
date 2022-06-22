@@ -1,0 +1,194 @@
+{% extends "topic_modelling/layout.html" %}{% block solution_name %} Inspired Brand {% endblock %}
+
+{% block css %}
+    <style>
+
+.container {
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+h2 {
+  font-size: 26px;
+  margin: 20px 0;
+  text-align: center;
+}
+h2 small {
+  font-size: 0.5em;
+}
+
+.responsive-table li {
+  border-radius: 3px;
+  padding: 25px 30px;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+.responsive-table .table-header {
+  background-color: #442460;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+.responsive-table .table-row {
+  background-color: #ffffff;
+  box-shadow: 0px 0px 9px 0px rgba(0, 0, 0, 0.1);
+}
+.responsive-table .col-1 {
+  flex-basis: 10%;
+}
+.responsive-table .col-2 {
+  flex-basis: 40%;
+}
+.responsive-table .col-3 {
+  flex-basis: 25%;
+}
+.responsive-table .col-4 {
+  flex-basis: 25%;
+}
+@media all and (max-width: 767px) {
+  .responsive-table .table-header {
+    display: none;
+  }
+  .responsive-table li {
+    display: block;
+  }
+  .responsive-table .col {
+    flex-basis: 100%;
+  }
+  .responsive-table .col {
+    display: flex;
+    padding: 10px 0;
+  }
+  .responsive-table .col:before {
+    color: #6C7A89;
+    padding-right: 10px;
+    content: attr(data-label);
+    flex-basis: 50%;
+    text-align: right;
+  }
+}
+</style>
+
+      <style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #442460;
+  color: white;
+}
+.abutton{
+width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #f2f2f2;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+</style>
+{% endblock %}
+{% block body %}
+
+<main>
+    <div class="topnav mt-0">
+  <a class="active" href="/topic_modelling/home">Create Project</a>
+  <a class=""  href="/topic_modelling/doc_rules">Select Document & Rules</a>
+  <a href="/topic_modelling/generate_concept">Generate Concept Seeds</a>
+  <a href="/topic_modelling/generate_thesarus">Generate Thesarus</a>
+  <a  class=""  href="/topic_modelling/generate_results">Generate Results</a>
+</div>
+    <center><h2 class="mt-4 font-weight-bold">Project List</h2></center>
+
+<div class="container">
+
+  <ul class="responsive-table ">
+    <li class="table-header text-light">
+      <div class="col col-2 ">Project Name</div>
+      <div class="col col-2">Date of Creation</div>
+      <div class="col col-1">Input Type</div>
+      <div class="col col-1">Market</div>
+      <div class="col col-1">Language</div>
+      <div class="col col-4">Action</div>
+    </li>
+
+          <li class="table-row">
+      <div class="col col-2" >Case Study</div>
+      <div class="col col-2" >29/5/2022</div>
+      <div class="col col-1" >Long</div>
+      <div class="col col-1" >India</div>
+      <div class="col col-1" >English</div>
+      <div class="col col-4" data-label="Payment Status">
+          <a href="/documents/documents/casestudy1_xZM5hAu.csv">Download</a>&nbsp;<br/>
+          <a href="generateLDAModel/21">View_LDA_Model</a>&nbsp;<br/>
+          <a href="docRules/21">Customize_Tokens</a><br/>
+          <a href="generateTop5Keywords/21">View_Top5KeyWords</a><br/>
+          <a href="generateSentiments/21">View_Sentiments</a><br/>
+          <a href="generateTags/21">View_Tags</a><br/>
+          <a href="getModelPerformance/21">View_ModelPerformance</a><br/>
+
+      </div>
+
+    </li>
+
+          <li class="table-row">
+     <div class="col col-2" >Testing Project</div>
+      <div class="col col-2" >23/5/2022</div>
+      <div class="col col-1" >short</div>
+      <div class="col col-1" >India</div>
+      <div class="col col-1" >English</div>
+      <div class="col col-4" data-label="Payment Status">
+          <a href="/documents/documents/Akshaya_AlvinYeo_Connect.csv">Download</a>&nbsp;<br/>
+          <a href="generateLDAModel/22">View_LDA_Model</a>&nbsp;<br/>
+          <a href="docRules/22">Customize_Tokens</a><br/>
+          <a href="generateTop5Keywords/22">View_Top5KeyWords</a><br/>
+          <a href="generateSentiments/22">View_Sentiments</a><br/>
+          <a href="generateTags/22">View_Tags</a><br/>
+          <a href="getModelPerformance/22">View_ModelPerformance</a><br/>
+
+      </div>
+
+    </li>
+
+
+
+
+  </ul>
+</div>
+
+
+
+
+</main>
+
+
+{% endblock %} {% block js %}
+
+
+{% endblock %}

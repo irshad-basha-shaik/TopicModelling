@@ -1,0 +1,445 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Ideal</title>
+
+        <!-- *********** Fevicon Connections ************** -->
+        <link rel="icon"  href="{% static 'oklabs_assets/img/id_logo.png' %}" />
+
+
+        <!-- *********** CSS Connections ************** -->
+        <link rel="stylesheet" href="{% static 'lib/css/fonts.googleapis.css' %}" />
+        <link rel="stylesheet" href="{% static 'lib/css/fontawesome-free/css/all.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'lib/css/ionicons.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'lib/css/uikit.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'oklabs_assets/dist/css/idstats.min.css' %}" />
+        <link rel="stylesheet" href="{% static 'style/topic_modelling/ideal_layout.css' %}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+        <style>
+            /* width */
+            ::-webkit-scrollbar {
+                width: 5px;
+            }
+
+            /* Track */
+            ::-webkit-scrollbar-track {
+                background: #f1f1f1;
+            }
+
+            /* Handle */
+            ::-webkit-scrollbar-thumb {
+                background: #ffa601;
+            }
+
+            /* Handle on hover */
+            ::-webkit-scrollbar-thumb:hover {
+                background: #555;
+            }
+        </style>
+        <style>
+            #preloader {
+                z-index: 100000 !important;
+            }
+            .r_aside {
+                background: #442460;
+            }
+            .r_asideheader {
+                height: 56px;
+                background: #fdfafd;
+            }
+            .r_ul1 > li {
+                background: #56396f;
+                border-bottom: 1px solid #442460;
+            }
+            .r_ul1 > li > p {
+                background: red;
+            }
+            .r_containermain {
+                height: 144px;
+                background: #f8eefa;
+            }
+            .r_main2 {
+                background: #fdfafd;
+            }
+            .r_fullimage {
+                background-image: url("{% static 'oklabs_assets/img/Full image.svg' %}");
+                background-repeat: no-repeat;
+                background-size: contain;
+            }
+            .r_mainp {
+                font: normal normal bold 30px/39px Calibri;
+                letter-spacing: 0px;
+                color: #442460;
+
+            }
+            .r_main_head{
+                font: normal normal bold 28px/39px Calibri;
+                letter-spacing: 0px;
+                color: #442460;
+                text-align: center;
+            }
+            .r_colorli {
+                font: normal normal normal 16px/19px Calibri;
+                letter-spacing: 0px;
+                color: #c6bccf;
+                opacity: 1;
+            }
+            .r_button1 {
+                color: #fff;
+                background: #442460;
+                border: 1px solid #442460 !important;
+                font: #442460;
+            }
+            .r_button_new {
+                background: #442460;
+                border: 1px solid #442460 !important;
+                color: #fff;
+            }
+            .r_button_new:hover{
+            color:#fff;
+            }
+            .r_button {
+                color: #fff;
+                background: #442460;
+                border: 1px solid #442460 !important;
+                font: black;
+            }
+
+            .r_reset_button {
+                color: #000;
+                border: 1px solid #ffb900 !important;
+            }
+            .r_button:hover,
+            .r_reset_button:hover {
+                color: #fff;
+                background: #ffb900 !important;
+                border: 1px solid #ffb900 !important;
+            }
+            .n_button {
+                color: #fff;
+                background: #ffb900 ;
+                border: 1px solid #442460 !important;
+                font: black;
+            }
+
+            .n_reset_button {
+                color: #000;
+                border: 1px solid #ffb900 !important;
+            }
+            .n_button:hover,
+            .n_reset_button:hover {
+                color: #fff;
+                background:#442460; !important;
+                border: 1px solid #ffb900 !important;
+            }
+            .g_button {
+                color: #fff;
+                background: #989898;
+                border: 1px solid #442460 !important;
+                font: black;
+            }
+
+            .g_reset_button {
+                color: #000;
+                border: 1px solid #ffb900 !important;
+            }
+            .g_button:hover,
+            .g_reset_button:hover {
+                color: #000000;
+                background: #F4EA56 !important;
+                border: 1px solid #ffb900 !important;
+            }
+            .sidebar .nav-link {
+                border-left: 6px solid #56396f;
+            }
+            .nav-icon:hover {
+                color: chartreuse !important;
+            }
+            .r_p1 {
+                font: normal normal normal 20px/24px Avenir;
+                color: #4d4f5c;
+            }
+            .r_p2 {
+                font: normal normal normal 14px/16px Avenir;
+                color: #4d4f5c;
+            }
+            ::placeholder {
+                font: normal normal normal 16px/25px Avenir;
+                color: #000000 !important;
+            }
+            .r_span:focus ~ .r_input_name {
+                top: -10px;
+                font-size: 0.8em;
+            }
+            .r_span {
+                font: normal normal normal 16px/25px Avenir;
+                color: #000000;
+            }
+            .r_input_name {
+                position: absolute;
+                color: #000000;
+                top: 0px;
+                transition: all 0.1s linear;
+            }
+            .r_h {
+                font: normal normal normal 24px/30px Calibri;
+                letter-spacing: 0px;
+                color: #000000;
+            }
+            .r_imagp {
+                font: normal normal normal 20px/14px Calibri;
+                letter-spacing: 0.3px;
+                color: #4a274f;
+            }
+            @media only screen and (min-width: 767px) and (max-width: 1075px) {
+                .r_containermain {
+                    width: 1200px !important;
+                }
+            }
+            @media only screen and (max-width: 600px) {
+                .r_containermain {
+                    height: 80px;
+                }
+            }
+            @media only screen and (min-width: 1240px) {
+                .r_fullimage {
+                    background-size: cover;
+                }
+            }
+            .centered {
+                position: absolute;
+                top: 40px;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .r_button2 {
+                width: 100px;
+                height: 50px;
+                color: #000000;
+                border: 1px solid #ffb900;
+            }
+            .r_button2:hover {
+                border: 1px solid #ffb900;
+                background: #fff;
+                color: #000000;
+            }
+            .bg_pink {
+                background: #f8eefa;
+            }
+            .bg_grey {
+                background: #cbcbcb;
+            }
+            .header_alignment{
+                display:inline;
+            }
+        </style>
+        <!-- ********** ANIL JI CSS END *********** -->
+        {% block css %} {% endblock %}
+    </head>
+    <body class="hold-transition sidebar-mini">
+        <!-- preloader -->
+        <div id="preloader" class="uk-overlay-primary uk-position-cover">
+            <div class="uk-position-center">
+                <span uk-spinner="ratio: 2"></span>
+            </div>
+        </div>
+        <div class="wrapper">
+            <!-- Navbar -->
+            <nav class="main-header navbar navbar-expand navbar-white navbar-light fixed-top mb-0" style="background-color:#ffa601; height:0px;">
+                <!-- Left navbar links -->
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <abber title="Minimize Sidebar">
+                            <a class="nav-link" onclick="div_hide()" data-widget="pushmenu" role="button"><i class="fa fa fa-arrows-h" style="height=18px; width:18px"></i></a>
+                        </abber>
+                    </li>
+<!--                    <li class="nav-item">-->
+<!--                        <a class="nav-link pl-1" role="button"><i class="fas fa-search"></i></a>-->
+<!--                    </li>-->
+                </ul>
+
+            </nav>
+            <!-- /.navbar -->
+
+            <!-- Main Sidebar Container -->
+            <aside class="main-sidebar r_aside elevation-4" style="position: fixed; background-color:#DCDCDC;">
+                <!-- Brand Logo -->
+                <header class="r_asideheader">
+                    <a href="/" >
+                        <img src="{% static 'oklabs_assets/img/id_logo.png' %}" id="title_1" class="mt-2 ml-3  d-none" style="height: 36px; width: 36px;" />
+                        <div id="title_2">
+                                <img src="{% static 'oklabs_assets/img/id_logo.png' %}" class="mt-2 ml-2" style="height: 36px; width: 36px; display:inline; vertical-align:bottom;" />
+                                <p class="r_imagp pl-1" style="display:inline; vertical-align:baseline;" >Topic Modelling</p>
+                        </div>
+                    </a>
+                </header>
+
+                <!-- Sidebar -->
+                <div class="sidebar p-0" style="background-color:#DCDCDC;">
+                    <nav class="">
+                        <ul class="nav nav-pills nav-sidebar r_ul1 flex-column"  style="background-color:##DCDCDC;" data-widget="treeview" role="menu" data-accordion="false">
+                            <li class="nav-item" style="background-color:#DCDCDC;">
+                                <a href="/user/dashboard"  class="nav-link w-100 h-100 rounded-0 mb-0">
+                                    <img src="{% static 'oklabs_assets/img/chart-bar-32.svg' %}" />
+                                    <p class="r_colorli p-sm-2 text-dark" >
+                                        Dashboard
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item" style="background-color:#DCDCDC;">
+                                <a href="#" class="nav-link w-100 h-100 rounded-0 mb-0">
+                                    <img src="{% static 'oklabs_assets/img/email-84.svg' %}" />
+                                    <p class="r_colorli p-sm-2 text-dark">
+                                        Solutions
+                                    </p>
+                                </a>
+                                <ul class="nav nav-treeview" style="background-color:#DCDCDC;">
+                                    <li class="nav-item">
+                                        <a href="/index/innovex_decision" class="nav-link px-2">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p class="r_colorli p-sm-2 text-dark">Ideal Innovation Lab</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" style="background-color:#DCDCDC;">
+                                        <a href="/index/market_place_vistas" class="nav-link px-2">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p class="r_colorli p-sm-2 text-dark">Ideal Experience Lab</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" style="background-color:#DCDCDC;">
+                                        <a href="/index/sustain_x_decision" class="nav-link px-2">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p class="r_colorli p-sm-2 text-dark">Ideal SustainX Lab</p>
+                                        </a>
+                                    </li>
+                                    <li class="nav-item" style="background-color:#DCDCDC;">
+                                        <a href="/index/agile_research" class="nav-link px-2">
+                                            <i class="far fa-circle nav-icon"></i>
+                                            <p class="r_colorli p-sm-2 text-dark">Ideal Agile Analytics</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="nav-item" style="background-color:#DCDCDC;">
+                                <a href="#" class="nav-link w-100 h-100 rounded-0 mb-0">
+                                    <img src="{% static 'oklabs_assets/img/Support Iocn.svg' %}" />
+                                    <p class="r_colorli p-sm-2 text-dark">
+                                        Resource
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item" style="background-color:#DCDCDC;">
+                                <a href="#" class="nav-link w-100 h-100 rounded-0 mb-0">
+                                    <img src="{% static 'oklabs_assets/img/settings-gear-64.svg' %}" />
+                                    <p class="r_colorli p-sm-2 text-dark">
+                                        Settings
+                                    </p>
+                                </a>
+                            </li>
+                            <li class="nav-item" style="background-color:#DCDCDC; ">
+                                <a href="/" class="nav-link">
+                                    <img src="{% static 'oklabs_assets/img/house.svg' %}" />
+                                    <p class="r_colorli p-sm-2 text-dark">
+                                        Back to Home
+                                    </p>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                    <!-- /.sidebar-menu -->
+                </div>
+                <!-- Scrollable modal -->
+                <!-- /.sidebar -->
+            </aside>
+
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper r_main2">
+<!--                 Content Header (Page header)-->
+<!--                <div class="container-fluid r_containermain p-4" style="margin-top:3.5rem ">-->
+<!--                    <div class="r_fullimage h-100" >-->
+<!--                        <div class="centered " >-->
+
+<!--                        </div>-->
+<!--                        <br/>-->
+<!--                    </div>-->
+<!--                </div>-->
+                <div class="h-100">
+                    <div class="row m-0">
+                        <div class="col p-0">
+                            <div class="h5 float-left ml-4 mt-3 mb-0 project_name_heading" id="header">{{ project_name }}</div>
+                        </div>
+                    </div>
+                    <div class="m-0">
+                        <div class="mx-2 mt-2">
+
+                            {% block body %}{% endblock %}
+                        </div>
+                    </div>
+                </div>
+                <div class="py-5"></div>
+            </div>
+        </div>
+        <footer class="content-wrapper r_main2">
+<!--            <div class="text-center p-3" style="background-color: #000000;"><span style="color: #8b0000;">id</span>stats Research & Consultancy Pte Ltd. &copy; All Rights Reserved. <a href="https://idstats.co/">Click !!!</a></div>-->
+
+        </footer>
+        <!-- ****** ANIL JI SCRIPT ****** -->
+        <script src="{% static  'lib/jquery/jquery.min.js' %}"></script>
+        <script src="{% static  'script/topic_modelling/idstats.js' %}"></script>
+        <script src="{% static  'lib/jquery/jquery.slim.min.js' %}"></script>
+        <script src="{% static  'lib/js/bootstrap.bundle.min.js' %}"></script>
+        <script src="{% static  'lib/js/Chart.min.js' %}"></script>
+        <script src="{% static  'lib/js/uikit.min.js' %}"></script>
+        <script src="{% static  'lib/js/uikit-icons.min.js' %}"></script>
+        <script src="{% static  'lib/js/54bb64642b.js' %}" crossorigin="anonymous"></script>
+        <script src="{% static  'script/topic_modelling/logout.js' %}"></script>
+        <script src="{% static  'script/topic_modelling/auth_logout.js' %}"></script>
+        <script src="{% static  'script/topic_modelling/interceptor.js' %}"></script>
+        {% block js %} {% endblock %}
+        <script>
+            const { $, once, remove, transition } = UIkit.util;
+
+            window.onload = () => {
+                const loader = $("#preloader");
+
+                transition(loader, { opacity: 0 });
+                once(loader, "transitionend", () => remove(loader));
+            };
+        </script>
+
+        <!-- ***** ANIL JI SCRIPT ENDS ****** -->
+
+        <script type="text/javascript" id="zsiqchat">
+            var counter = false;
+            title_1 = document.getElementById("title_1");
+            title_2 = document.getElementById("title_2");
+            function div_hide() {
+                if (counter) {
+                    title_1.classList.add("d-none");
+                    title_2.classList.remove("d-none");
+                    counter = false;
+                } else {
+                    title_1.classList.remove("d-none");
+                    title_2.classList.add("d-none");
+                    counter = true;
+                }
+            }
+
+            var $zoho = $zoho || {};
+            $zoho.salesiq = $zoho.salesiq || { widgetcode: "d887bf4e8b1fa5c613a18ee5bf19f2ea6197a3589e650ee429ebc7021eaec1ce", values: {}, ready: function () {} };
+            var d = document;
+            s = d.createElement("script");
+            s.type = "text/javascript";
+            s.id = "zsiqscript";
+            s.defer = true;
+            s.src = "https://salesiq.zoho.in/widget";
+            t = d.getElementsByTagName("script")[0];
+            t.parentNode.insertBefore(s, t);
+        </script>
+    </body>
+</html>

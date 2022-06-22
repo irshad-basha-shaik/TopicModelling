@@ -1,0 +1,72 @@
+.r_imagp {
+    font: normal normal normal 20px/14px Calibri;
+    letter-spacing: 0.3px;
+    color: #43425d;
+}
+.r_navbar {
+    background-color: #fff;
+}
+.r_navbar > li > a {
+    color: #000 !important;
+}
+.r_navbar .active {
+    border-bottom: 3px solid #ffb900;
+    color: #000 !important;
+    font-weight: bold;
+    background-color: #fff !important;
+}
+.r_button1 {
+    border: none;
+    // width: 200px;
+    height: 50px;
+    background: #442460;
+}
+.r_button1:hover {
+    background: #442460;
+}
+.r_button1:active {
+    background-color: #442460 !important;
+}
+
+.r_button2 {
+    width: 160px;
+    height: 50px;
+    color: #000000;
+    border: 1px solid #442460;
+}
+.r_button2:hover {
+    border: 1px solid #442460;
+    background: #fff;
+    color: #000000;
+}
+@media only screen and (max-width: 510px) {
+    .r_navbar {
+        width: 100%;
+    }
+    .r_button1,
+    .r_button2 {
+        margin-bottom: 10px !important;
+        width: 100% !important;
+    }
+}
+.btn-outline-suc {
+     color: #442460;
+        border-color: #442460;
+    }
+    .chart-css-sm {
+        height: 200px;
+    }
+    .chart-css {
+        height: 240px;
+    }
+
+        .a_panel_bg {
+        background: #3E3D5F !important;
+        color:#ffffff;
+    }
+    .project_name_heading{
+            font: normal normal bold 24px/30px Calibri;
+            letter-spacing: 0px;
+            color: #442460;
+            text-align: center;
+    }

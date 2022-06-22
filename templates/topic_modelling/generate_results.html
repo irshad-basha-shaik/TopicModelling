@@ -1,0 +1,139 @@
+{% extends "topic_modelling/layout.html" %}{% block solution_name %} Inspired Brand {% endblock %}
+
+{% block css %}
+    <style>
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #442460;
+  color: white;
+}
+.abutton{
+width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #f2f2f2;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+</style>
+
+{% endblock %}
+{% block body %}
+
+<main>
+
+<div class="topnav ">
+  <a class="" href="/topic_modelling/home">Create Project</a>
+  <a class=""  href="/topic_modelling/doc_rules">Select Document & Rules</a>
+  <a href="/topic_modelling/generate_concept">Generate Concept Seeds</a>
+  <a href="/topic_modelling/generate_thesarus">Generate Thesarus</a>
+  <a  class="active"  href="/topic_modelling/generate_results">Generate Results</a>
+</div>
+     <a type="button"  class="btn  mt-3 btn-lg rounded-0 r_button mr-1 mb-4" onclick="show_key_words()" >Key Words</a>
+    <a type="button" class="btn  btn-lg rounded-0 r_button mt-3 mr-1 mb-4 "  onclick="show_word_maps()">Word Maps</a>
+    <a type="button"  class="btn   r_button btn-lg mt-3 mb-4 rounded-0 mr-1" onclick="show_sentiment()">Sentiment</a>
+    <a type="button"  class="btn   r_button btn-lg mt-3 mb-4 rounded-0 mr-1" onclick="show_tags()">Tags</a>
+    <div class="row p-4 d-none" id="key_words">
+        <div class=" col-6 shadow w-70 " style="height:400px ">
+            <img src="{% static', filename = 'images/topic_modelling/g1.png')}}"   class="p-5" />
+
+        </div>
+    </div>
+    <div class="row p-4 d-none " id="word_maps">
+        <div class=" col-6 shadow w-70 " style="height:400px ">
+
+            <img src="{% static', filename = 'images/topic_modelling/g2.png')}}"   class="p-5" />
+
+        </div>
+    </div>
+    <div class="row p-4 d-none " id="sentiment">
+        <div class=" col-6 shadow w-70 " style="height:400px ">
+            <img src="{% static', filename = 'images/topic_modelling/g3.png')}}"   class="p-5" />
+        </div>
+         <div class="col-6">
+             <a type="button" class="btn float-right btn-lg rounded-0 r_button mt-3 mr-1 mb-4 "  >Back</a>
+             <a type="button" class="btn float-right btn-lg rounded-0 r_button mt-3 mr-1 mb-4 "  >Delete</a>
+
+         </div>
+    </div>
+     <div class="row p-4 d-none " id="tags">
+        <div class=" col-6 shadow w-70 " style="height:400px ">
+            <img src="{% static', filename = 'images/topic_modelling/g1.png')}}"   class="p-5" />
+        </div>
+          <div class="col-6">
+              <a type="button" class="btn float-right btn-lg rounded-0 r_button mt-3 mr-1 mb-4 "  >Back</a>
+              <a type="button" class="btn float-right btn-lg rounded-0 r_button mt-3 mr-1 mb-4 "  >Delete</a>
+              <a type="button" class="btn float-right btn-lg rounded-0 r_button mt-3 mr-1 mb-4 "  >Add Respondent</a>
+              <a type="button" class="btn float-right btn-lg rounded-0 r_button mt-3 mr-1 mb-4 "  >Add Moderator</a>
+
+         </div>
+
+    </div>
+
+
+
+</main>
+
+
+{% endblock %} {% block js %}
+<script>
+    var key_words=document.getElementById("key_words");
+    var word_maps=document.getElementById("word_maps");
+    var sentiment=document.getElementById("sentiment");
+    var tags=document.getElementById("tags");
+
+    function show_key_words()
+    {
+        key_words.classList.remove("d-none")
+        word_maps.classList.add("d-none")
+        sentiment.classList.add("d-none")
+        tags.classList.add("d-none")
+    }
+    function show_word_maps()
+    {
+        key_words.classList.add("d-none")
+        word_maps.classList.remove("d-none")
+        sentiment.classList.add("d-none")
+        tags.classList.add("d-none")
+    }
+    function show_sentiment()
+    {
+        key_words.classList.add("d-none")
+        word_maps.classList.add("d-none")
+        sentiment.classList.remove("d-none")
+        tags.classList.add("d-none")
+    }
+    function show_tags()
+    {
+        key_words.classList.add("d-none")
+        word_maps.classList.add("d-none")
+        sentiment.classList.add("d-none")
+        tags.classList.remove("d-none")
+    }
+</script>
+{% endblock %}

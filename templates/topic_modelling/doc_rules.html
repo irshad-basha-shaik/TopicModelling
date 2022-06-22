@@ -1,0 +1,67 @@
+{% extends "topic_modelling/layout.html" %}{% block solution_name %} Inspired Brand {% endblock %}
+
+{% block css %}
+    <style>
+body {
+
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #442460;
+  color: white;
+}
+.abutton{
+width: 150px;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background: #f2f2f2;
+    font-size: 16px;
+    color: #333;
+    cursor: pointer;
+}
+</style>
+
+{% endblock %}
+{% block body %}
+
+<main>
+
+<div class="topnav ">
+  <a class="" href="/topic_modelling/home">Create Project</a>
+  <a class="active"  href="/topic_modelling/doc_rules">Select Document & Rules</a>
+  <a href="/topic_modelling/generate_concept">Generate Concept Seeds</a>
+  <a href="/topic_modelling/generate_thesarus">Generate Thesarus</a>
+  <a  class=""  href="/topic_modelling/generate_results">Generate Results</a>
+</div>
+
+
+
+
+        </main>
+
+
+{% endblock %} {% block js %}
+
+
+{% endblock %}
