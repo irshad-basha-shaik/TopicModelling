@@ -272,14 +272,8 @@ width: 150px;
     </li>
 
     </div>
-<!--div class="topnav">
-  <a href="/home">Create Project</a>
-  <a href="/doc_rules">Select Document & Rules</a>
-  <a href="/generate_concept">Generate Concept Seeds</a>
-  <a href="/generate_thesarus">Generate Thesarus</a>
-  <a href="/generate_results">Generate Results</a>
-</div-->
-<!--div class="testbox">
+
+  <div class="testbox">
     <form method="post" class="form-sample" name ="myForm" >
         {% csrf_token %}
       <fieldset>
@@ -287,13 +281,17 @@ width: 150px;
 
         <div class="colums">
           <div class="item">
-              <div class="col-md-6">
-                  <div class="form-group row">
-                      <label class="col-sm-4 col-form-label">Project Name</label>
-                      <div class="col-sm-8">
+              <div class="col-md-12">
+                <label >Project Name</label>
+                <div class="col-sm-6">
                           {{ form.projectName}}
                       </div>
-                  </div>
+                <!--div class="form-group row">
+                      <label class="col-sm-6 col-form-label">Project Name</label>
+                      <div class="col-sm-6">
+                          {{ form.projectName}}
+                      </div>
+                  </div-->
               </div>
           </div>
           <div class="item">
@@ -396,7 +394,7 @@ width: 150px;
       </div>
     </form>
 
-    </div-->
+    </div>
 
 
 </main>

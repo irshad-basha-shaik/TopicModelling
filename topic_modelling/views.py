@@ -45,8 +45,7 @@ warnings.filterwarnings('ignore')
 import pyLDAvis
 import pyLDAvis.sklearn
 
-def home(request):
-    return render(request, 'topic_modelling/home.html')
+
 def generate_concept(request):
     return render(request, 'topic_modelling/generate_concept.html')
 def doc_rules(request):
@@ -58,23 +57,6 @@ def generate_results(request):
 def project_list(request):
     return render(request, 'topic_modelling/project_list.html')
 
-def topic_modelling(request):
-    return render(request, 'topic_modelling/layout.html')
-
-def topic_modelling_home(request):
-    return render(request,'topic_modelling/home.html')
-
-def topic_modelling_generate_concept(request):
-    return render(request,'topic_modelling/generate_concept.html')
-
-def topic_modelling_generate_thesarus(request):
-    return render(request,'topic_modelling/generate_thesarus.html')
-
-def topic_modelling_generate_generate_results(request):
-    return render(request,'topic_modelling/generate_results.html')
-
-def topic_modelling_project_list(request):
-    return render(request,'topic_modelling/project_list.html')
 def home(request):
     context = {}
     context['form'] = TopicForm()
