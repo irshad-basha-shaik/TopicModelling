@@ -243,81 +243,134 @@ width: 150px;
 {% block body %}
 
 <main>
+  <div class="topnav">
+    <li class="nav-item">
+      <a class="nav-link" href="/">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Create Project</span>
+      </a>
+      <a class="nav-link" href="/doc_rules">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Select Document & Rules</span>
+      </a>
+      <a class="nav-link" href="/generate_concept">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Generate Concept Seeds</span>
+      </a>
+      <a class="nav-link" href="/generate_thesarus">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Generate Thesarus</span>
+      </a>
+      <a class="nav-link" href="/generate_results">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">generate_results</span>
+      </a>
+      <a class="nav-link" href="/project_list">
+        <i class="mdi mdi-view-headline menu-icon"></i>
+        <span class="menu-title">Project List</span>
+      </a>
+    </li>
 
-<div class="topnav mt-0">
-  <a class="active" href="/topic_modelling/home">Create Project</a>
-  <a class=""  href="/topic_modelling/doc_rules">Select Document & Rules</a>
-  <a href="/topic_modelling/generate_concept">Generate Concept Seeds</a>
-  <a href="/topic_modelling/generate_thesarus">Generate Thesarus</a>
-  <a  class=""  href="/topic_modelling/generate_results">Generate Results</a>
-</div>
-<div class="testbox">
-    <form method="post" enctype="multipart/form-data">
-
+    </div>
+<!--div class="topnav">
+  <a href="/home">Create Project</a>
+  <a href="/doc_rules">Select Document & Rules</a>
+  <a href="/generate_concept">Generate Concept Seeds</a>
+  <a href="/generate_thesarus">Generate Thesarus</a>
+  <a href="/generate_results">Generate Results</a>
+</div-->
+<!--div class="testbox">
+    <form method="post" class="form-sample" name ="myForm" >
+        {% csrf_token %}
       <fieldset>
         <legend style="background-color:#442460;">Project Form</legend>
 
         <div class="colums">
           <div class="item">
-            <label for="projectName"> Project Name<span>*</span></label>
-            <input id="projectName" type="text" name="projectName" required/>
+              <div class="col-md-6">
+                  <div class="form-group row">
+                      <label class="col-sm-4 col-form-label">Project Name</label>
+                      <div class="col-sm-8">
+                          {{ form.projectName}}
+                      </div>
+                  </div>
+              </div>
           </div>
           <div class="item">
-            <label for="inpType"> Input Type<span>*</span></label>
-              <select id="inpType"  name="inpType"  required>
-                <option>Select</option>
-                <option>IDI</option>
-                <option>FGD SECONDARY RESEARCH</option>
-                <option>ONLINE SCRAPING</option>
-            </select>
+              <div class="col-md-6">
+                  <div class="form-group row">
+                      <label class="col-sm-4 col-form-label">Input Type</label>
+                      <div class="col-sm-8">
+                          {{ form.inpType}}
+                      </div>
+                  </div>
+              </div>
           </div>
           <div class="item">
-            <label for="document">Topic Modelling Document<span>*</span></label>
-            <input id="document"  type="file" accept=".csv" name="document"  required/>
+              <div class="col-md-6">
+                  <div class="form-group row">
+                      <label class="col-sm-4 col-form-label">Topic Modelling Document</label>
+                      <div class="col-sm-8">
+                          {{ form.document}}
+                      </div>
+                  </div>
+              </div>
           </div>
           <div class="item">
-            <label for="ndoc"> Number of Documents<span>*</span></label>
-            <input id="ndoc" type="text" name="ndoc" placeholder="1"  required/>
+              <div class="col-md-6">
+                  <div class="form-group row">
+                      <label class="col-sm-4 col-form-label">Number of Documents</label>
+                      <div class="col-sm-8">
+                          {{ form.ndoc}}
+                      </div>
+                  </div>
+              </div>
           </div>
             <div class="item">
-            <label for="tsize"> Text Size<span>*</span></label>
-            <select id="tsize"  name="tsize"  required>
-                <option>Select</option>
-                <option>Long</option>
-                <option>Short</option>
-            </select>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Text Size</label>
+                        <div class="col-sm-8">
+                            {{ form.tsize}}
+                        </div>
+                    </div>
+                </div>
           </div>
             <div class="item">
-            <label for="lang">Document Type <span>*</span></label>
-            <select id="doc_type"  name="doc_type"  required>
-                <option>Select</option>
-                <option>word</option>
-                <option>pdf</option>
-                <option>excel</option>
-                <option>csv</option>
-            </select>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Document Type</label>
+                        <div class="col-sm-8">
+                            {{ form.doc_type}}
+                        </div>
+                    </div>
+                </div>
           </div>
 
             <div class="item">
-            <label for="Centre"> Centre<span>*</span></label>
-            <select id="Centre"  name="Centre"  required>
-                <option>Select</option>
-                <option>Centre1</option>
-                <option>Centre2</option>
-            </select>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Centre</label>
+                        <div class="col-sm-8">
+                            {{ form.Centre}}
+                        </div>
+                    </div>
+                </div>
           </div>
             <div class="item">
-            <label for="lang"> Language <span>*</span></label>
-            <select id="lang"  name="lang"  required>
-                <option>Select</option>
-                <option>English</option>
-                <option>Hindi</option>
-            </select>
+                <div class="col-md-6">
+                    <div class="form-group row">
+                        <label class="col-sm-4 col-form-label">Language</label>
+                        <div class="col-sm-8">
+                            {{ form.lang}}
+                        </div>
+                    </div>
+                </div>
           </div>
          </div>
       </fieldset>
             <div class="btn-block">
-      <button type="submit" class="r_button" >File Upload</button>&nbsp;
+                <button type="submit" class="r_button" >File Upload</button>&nbsp;
                 <a  href="/topic_modelling/project_list" class="r_button "  style="
       width: 150px;
       padding: 10px;
@@ -343,7 +396,7 @@ width: 150px;
       </div>
     </form>
 
-    </div>
+    </div-->
 
 
 </main>

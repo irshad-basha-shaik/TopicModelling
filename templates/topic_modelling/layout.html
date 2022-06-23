@@ -67,7 +67,7 @@
                 background: #fdfafd;
             }
             .r_fullimage {
-                background-image: url("{% static 'oklabs_assets/img/Full image.svg' %}");
+                //background-image: url("{% static 'oklabs_assets/img/Full image.svg' %}");
                 background-repeat: no-repeat;
                 background-size: contain;
             }
@@ -243,11 +243,11 @@
     </head>
     <body class="hold-transition sidebar-mini">
         <!-- preloader -->
-        <div id="preloader" class="uk-overlay-primary uk-position-cover">
+        <!--div id="preloader" class="uk-overlay-primary uk-position-cover">
             <div class="uk-position-center">
                 <span uk-spinner="ratio: 2"></span>
             </div>
-        </div>
+        </div-->
         <div class="wrapper">
             <!-- Navbar -->
             <nav class="main-header navbar navbar-expand navbar-white navbar-light fixed-top mb-0" style="background-color:#ffa601; height:0px;">
@@ -384,24 +384,23 @@
                 <div class="py-5"></div>
             </div>
         </div>
-        <footer class="content-wrapper r_main2">
-<!--            <div class="text-center p-3" style="background-color: #000000;"><span style="color: #8b0000;">id</span>stats Research & Consultancy Pte Ltd. &copy; All Rights Reserved. <a href="https://idstats.co/">Click !!!</a></div>-->
+        <!--footer class="content-wrapper r_main2">
+<            <div class="text-center p-3" style="background-color: #000000;"><span style="color: #8b0000;">id</span>stats Research & Consultancy Pte Ltd. &copy; All Rights Reserved. <a href="https://idstats.co/">Click !!!</a></div>
 
-        </footer>
+        </footer-->
         <!-- ****** ANIL JI SCRIPT ****** -->
         <script src="{% static  'lib/jquery/jquery.min.js' %}"></script>
         <script src="{% static  'script/topic_modelling/idstats.js' %}"></script>
         <script src="{% static  'lib/jquery/jquery.slim.min.js' %}"></script>
         <script src="{% static  'lib/js/bootstrap.bundle.min.js' %}"></script>
         <script src="{% static  'lib/js/Chart.min.js' %}"></script>
-        <script src="{% static  'lib/js/uikit.min.js' %}"></script>
         <script src="{% static  'lib/js/uikit-icons.min.js' %}"></script>
         <script src="{% static  'lib/js/54bb64642b.js' %}" crossorigin="anonymous"></script>
         <script src="{% static  'script/topic_modelling/logout.js' %}"></script>
         <script src="{% static  'script/topic_modelling/auth_logout.js' %}"></script>
         <script src="{% static  'script/topic_modelling/interceptor.js' %}"></script>
         {% block js %} {% endblock %}
-        <script>
+        <!--script>
             const { $, once, remove, transition } = UIkit.util;
 
             window.onload = () => {
@@ -410,11 +409,11 @@
                 transition(loader, { opacity: 0 });
                 once(loader, "transitionend", () => remove(loader));
             };
-        </script>
+        </script-->
 
         <!-- ***** ANIL JI SCRIPT ENDS ****** -->
 
-        <script type="text/javascript" id="zsiqchat">
+        <!--script type="text/javascript" id="zsiqchat">
             var counter = false;
             title_1 = document.getElementById("title_1");
             title_2 = document.getElementById("title_2");
@@ -440,6 +439,6 @@
             s.src = "https://salesiq.zoho.in/widget";
             t = d.getElementsByTagName("script")[0];
             t.parentNode.insertBefore(s, t);
-        </script>
+        </script-->
     </body>
 </html>
